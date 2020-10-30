@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Add NuGet Source
-      run: dotnet nuget add source https://nuget.pkg.github.com/kmaru/index.json -n github -u kmaru -p "${{secrets.USER_PASS}}"
+      run: dotnet nuget add source https://nuget.pkg.github.com/kmaru/index.json -n github -u kmaru -p GH_TOKEN
     - name: Package
       run: dotnet pack --configuration Release
     - name: Publish
